@@ -7,7 +7,6 @@ function Branches({ branches, onAdd, onUpdate, onDelete }) {
     const [searchTerm, setSearchTerm] = useState('');
     const [formData, setFormData] = useState({
         name: '',
-        location: '',
         contactPerson: '',
         phone: '',
         email: ''
@@ -26,7 +25,6 @@ function Branches({ branches, onAdd, onUpdate, onDelete }) {
     const resetForm = () => {
         setFormData({
             name: '',
-            location: '',
             contactPerson: '',
             phone: '',
             email: ''
@@ -42,16 +40,15 @@ function Branches({ branches, onAdd, onUpdate, onDelete }) {
     };
 
     const filteredBranches = branches.filter(branch =>
-        branch.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        branch.location.toLowerCase().includes(searchTerm.toLowerCase())
+        branch.name.toLowerCase().includes(searchTerm.toLowerCase())
     );
 
     return (
         <div className="books-page">
             <div className="page-header">
                 <div>
-                    <h1>🏢 Branch Management</h1>
-                    <p className="subtitle">Manage library branches and locations</p>
+                    <h1>🏢 Academic Branches</h1>
+                    <p className="subtitle">Manage academic streams and departments</p>
                 </div>
                 <button className="btn btn-primary" onClick={() => setShowModal(true)}>
                     ➕ Add Branch
@@ -62,7 +59,7 @@ function Branches({ branches, onAdd, onUpdate, onDelete }) {
                 <span className="search-icon">🔍</span>
                 <input
                     type="text"
-                    placeholder="Search by name or location..."
+                    placeholder="Search by branch name..."
                     value={searchTerm}
                     onChange={(e) => setSearchTerm(e.target.value)}
                 />
@@ -89,7 +86,6 @@ function Branches({ branches, onAdd, onUpdate, onDelete }) {
                                 <span className="badge badge-success">Active</span>
                             </div>
                             <div className="book-details">
-                                <p><strong>Location:</strong> {branch.location}</p>
                                 <p><strong>Contact Person:</strong> {branch.contactPerson}</p>
                                 <p><strong>Phone:</strong> {branch.phone}</p>
                                 <p><strong>Email:</strong> {branch.email}</p>
@@ -113,23 +109,13 @@ function Branches({ branches, onAdd, onUpdate, onDelete }) {
                         <h2>{editingBranch ? 'Edit Branch' : 'Add New Branch'}</h2>
                         <form onSubmit={handleSubmit}>
                             <div className="form-group">
-                                <label className="form-label">Branch Name *</label>
+                                <label className="form-label">Branch Name * (e.g. CSE, ECE)</label>
                                 <input
                                     type="text"
                                     required
                                     value={formData.name}
                                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                                     placeholder="Enter branch name"
-                                />
-                            </div>
-                            <div className="form-group">
-                                <label className="form-label">Location *</label>
-                                <input
-                                    type="text"
-                                    required
-                                    value={formData.location}
-                                    onChange={(e) => setFormData({ ...formData, location: e.target.value })}
-                                    placeholder="Enter location/address"
                                 />
                             </div>
                             <div className="form-group">
