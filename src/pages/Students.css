@@ -1,0 +1,67 @@
+.students-page {
+    animation: fadeIn 0.5s ease;
+}
+
+.students-table-container {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    margin-top: 0.75rem;
+}
+
+.students-table {
+    width: 100%;
+}
+
+.students-table thead {
+    background: var(--bg-tertiary);
+}
+
+.students-table th {
+    padding: 0.5rem 0.65rem;
+    text-align: left;
+    font-weight: 600;
+    font-size: 0.72rem;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.students-table td {
+    padding: 0.5rem 0.65rem;
+    font-size: 0.78rem;
+}
+
+.students-table tbody tr {
+    border-bottom: 1px solid var(--border);
+    transition: all var(--transition-fast);
+}
+
+.students-table tbody tr:hover {
+    background: var(--bg-tertiary);
+}
+
+.student-name {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.student-avatar {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 0.7rem;
+}
+
+.table-actions {
+    display: flex;
+    gap: 0.5rem;
+}

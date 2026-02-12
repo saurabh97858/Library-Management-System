@@ -1,0 +1,108 @@
+.report-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 0.75rem;
+    margin-top: 0.75rem;
+}
+
+.report-grid .card h2 {
+    font-size: 0.95rem;
+    margin-bottom: 0.75rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border);
+}
+
+.category-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.category-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+}
+
+.category-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.category-name {
+    font-weight: 600;
+    color: var(--text-primary);
+    font-size: 0.78rem;
+}
+
+.category-count {
+    font-size: 0.72rem;
+    color: var(--text-muted);
+}
+
+.category-bar {
+    height: 5px;
+    background: var(--bg-tertiary);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+}
+
+.category-fill {
+    height: 100%;
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    border-radius: var(--radius-lg);
+    transition: width var(--transition-normal);
+}
+
+.popular-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.popular-item {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.5rem;
+    background: var(--bg-tertiary);
+    border-radius: var(--radius-md);
+    transition: all var(--transition-normal);
+}
+
+.popular-item:hover {
+    background: var(--bg-primary);
+    transform: translateX(4px);
+}
+
+.popular-rank {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--primary);
+    min-width: 28px;
+    text-align: center;
+}
+
+.popular-info {
+    flex: 1;
+}
+
+.popular-title {
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 0.1rem;
+    font-size: 0.78rem;
+}
+
+.popular-author {
+    font-size: 0.7rem;
+    color: var(--text-muted);
+}
+
+.penalty-table-container {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+}
